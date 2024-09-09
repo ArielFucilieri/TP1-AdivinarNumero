@@ -1,0 +1,240 @@
+body {
+  background-color: #1a1a1a;
+  font-family: 'Press Start 2P', cursive;
+  color: #fff;
+  text-align: center;
+  margin: 0;
+  padding: 0;
+}
+
+.App {
+  padding: 20px;
+  max-width: 100%;
+}
+
+@keyframes neonColors {
+  0%, 100% { text-shadow: 0 0 5px #000, 0 0 10px #000, 0 0 15px #000, 0 0 20px #000, 0 0 25px #000, 0 0 30px #000, 0 0 35px #000; }
+  20% { text-shadow: 0 0 5px #550000, 0 0 10px #550000, 0 0 15px #550000, 0 0 20px #550000, 0 0 25px #550000, 0 0 30px #550000, 0 0 35px #550000; }
+  40% { text-shadow: 0 0 5px #003355, 0 0 10px #003355, 0 0 15px #003355, 0 0 20px #003355, 0 0 25px #003355, 0 0 30px #003355, 0 0 35px #003355; }
+  60% { text-shadow: 0 0 5px #003300, 0 0 10px #003300, 0 0 15px #003300, 0 0 20px #003300, 0 0 25px #003300, 0 0 30px #003300, 0 0 35px #003300; }
+  80% { text-shadow: 0 0 5px #665500, 0 0 10px #665500, 0 0 15px #665500, 0 0 20px #665500, 0 0 25px #665500, 0 0 30px #665500, 0 0 35px #665500; }
+}
+
+.neon-title {
+  font-size: 2.5rem; 
+  color: #fff;
+  text-shadow: 
+    0 0 5px #000, 
+    0 0 10px #000, 
+    0 0 15px #000, 
+    0 0 20px #000, 
+    0 0 25px #000, 
+    0 0 30px #000, 
+    0 0 35px #000;
+  text-decoration: underline;
+  text-decoration-color: #333;
+  text-decoration-style: wavy;
+  margin-bottom: 30px;
+  animation: neonColors 4s ease-in-out infinite;
+}
+
+.game-info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+  flex-wrap: wrap;
+}
+
+.highscore {
+  background-color: rgba(0, 0, 0, 0.8);
+  border: 2px solid;
+  border-image: linear-gradient(45deg, red, orange, yellow, green, blue, indigo, violet);
+  border-image-slice: 1;
+  padding: 8px 15px;
+  margin: 10px;
+  color: white;
+  font-weight: bold;
+}
+
+.attempts {
+  font-size: 1.2rem;
+  color: #ffcc00;
+  white-space: nowrap;
+}
+
+.message-box {
+  font-size: 1.2rem;
+  margin-top: 20px;
+  padding: 10px;
+  border-radius: 5px;
+  background-color: #000;
+  border: 2px solid;
+  border-image: linear-gradient(45deg, green, blue);
+  border-image-slice: 1;
+  color: #fff;
+  max-width: 70%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.message-box.win-message {
+  color: green;
+  background-color: #000;
+  border: 2px solid green;
+}
+
+input {
+  padding: 10px;
+  font-size: 1.2rem;
+  border: 2px solid #00ff00;
+  background-color: #000;
+  color: #00ff00;
+  border-radius: 5px;
+  width: 200px;
+  text-align: center;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.input-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+
+button {
+  background-color: #00ff00;
+  border: none;
+  padding: 10px 20px;
+  font-size: 1.2rem;
+  color: #000;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+button:hover {
+  background-color: #00cc00;
+  transform: scale(1.05); 
+}
+
+button:disabled {
+  background-color: #444;
+  color: #aaa; 
+}
+
+button.reiniciar {
+  background-color: #ff3333;
+  color: white;
+}
+
+button.reiniciar:hover {
+  background-color: #ff0000;
+}
+
+.skulls-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 10px;
+}
+
+.skull {
+  margin-right: 5px;
+  font-size: 1.2rem;
+  width: 20px; 
+}
+
+.failed-attempts {
+  font-size: 1.2rem;
+  margin: 10px 0;
+  padding: 10px; 
+  background-color: #000; 
+  color: #fff;
+  border: 3px solid transparent; 
+  border-image: linear-gradient(45deg, red, orange, yellow, green, blue, indigo, violet) 1; 
+  text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000; 
+  animation: borderColorChange 5s infinite;
+  display: flex; 
+  flex-direction: column; 
+  align-items: center;
+}
+
+
+@keyframes borderColorChange {
+  0% { border-image-source: linear-gradient(45deg, red, orange, yellow, green, blue, indigo, violet); }
+  25% { border-image-source: linear-gradient(45deg, violet, red, orange, yellow, green, blue, indigo); }
+  50% { border-image-source: linear-gradient(45deg, indigo, violet, red, orange, yellow, green, blue); }
+  75% { border-image-source: linear-gradient(45deg, blue, indigo, violet, red, orange, yellow, green); }
+  100% { border-image-source: linear-gradient(45deg, green, blue, indigo, violet, red, orange, yellow); }
+}
+
+
+@media (max-width: 1200px) {
+  .neon-title {
+    font-size: 2rem;
+  }
+
+  .game-info {
+    flex-direction: column;
+  }
+
+  input {
+    width: 100%;
+    max-width: 300px;
+  }
+}
+
+@media (max-width: 768px) {
+  .neon-title {
+    font-size: 1.5rem;
+  }
+
+  .game-info {
+    flex-direction: column;
+  }
+
+  .message-box {
+    font-size: 1rem;
+    max-width: 90%;
+  }
+
+  input {
+    width: 100%;
+  }
+
+  button {
+    font-size: 1rem;
+    padding: 8px 16px;
+  }
+}
+
+@media (max-width: 480px) {
+  .neon-title {
+    font-size: 1.2rem;
+  }
+
+  .game-info {
+    flex-direction: column;
+  }
+
+  .failed-attempts {
+    font-size: 1rem;
+    padding: 5px;
+  }
+
+  input {
+    width: 100%;
+    font-size: 1rem;
+  }
+
+  button {
+    font-size: 1rem;
+    padding: 8px 16px;
+  }
+}
