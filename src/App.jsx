@@ -4,7 +4,9 @@ import ButtonComponent from './Component/Button';
 import Confetti from "react-confetti";
 import './App.css';
 
+
 function App() {
+
   const [randomNumber, setRandomNumber] = useState(generateRandomNumber());
   const [guess, setGuess] = useState("");
   const [message, setMessage] = useState("");
@@ -13,6 +15,7 @@ function App() {
   const [gameOver, setGameOver] = useState(false);
   const [showConfetti, setShowConfetti] = useState(false);
   const [skulls, setSkulls] = useState([]);
+
 
   function generateRandomNumber() {
     return Math.floor(Math.random() * 20) + 1;
@@ -55,6 +58,7 @@ function App() {
     setGuess("");
   };
 
+
   const handleRestart = () => {
     setRandomNumber(generateRandomNumber());
     setGuess("");
@@ -65,6 +69,7 @@ function App() {
     setSkulls([]);
   };
 
+  
   return (
     <div className="App">
       <h1 className="neon-title">Adivina el número (1 al 20)</h1>
