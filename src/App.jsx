@@ -12,7 +12,7 @@ function App() {
   const [highScore, setHighScore] = useState(0);
   const [gameOver, setGameOver] = useState(false);
   const [showConfetti, setShowConfetti] = useState(false);
-  const [skulls, setSkulls] = useState([]);  // Estado para las calaveras
+  const [skulls, setSkulls] = useState([]);
 
   function generateRandomNumber() {
     return Math.floor(Math.random() * 20) + 1;
